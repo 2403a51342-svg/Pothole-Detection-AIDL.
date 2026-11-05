@@ -1,0 +1,28 @@
+# Dataset configuration for AI-Based Pothole Detection Using Multiple YOLO Models
+# Formatted for Ultralytics YOLO (v5, v8, v9, v10, 11, 12)
+
+path: ./dataset  # dataset root dir (relative to execution dir or absolute path)
+train: images/train  # train images (relative to 'path') 70%
+val: images/val      # val images (relative to 'path') 20%
+test: images/test    # test images (optional, relative to 'path') 10%
+
+# Classes
+names:
+  0: pothole
+
+nc: 1  # number of classes
+
+# Dataset Metadata
+source: "Roboflow Universe & RDD2022 Benchmark Dataset"
+license: "CC BY 4.0"
+annotation_format: "YOLO v1.1 (normalized cx, cy, w, h)"
+image_count_total: 3250
+splits:
+  train: 2275  # 70%
+  val: 650     # 20%
+  test: 325    # 10%
+road_conditions:
+  - "Dry asphalt highway"
+  - "Wet / rain-soaked suburban roads"
+  - "Uneven gravel & concrete urban pavements"
+  - "Low-light & night street conditions"

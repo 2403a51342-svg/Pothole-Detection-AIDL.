@@ -1,0 +1,53 @@
+{
+  "best_model": "YOLO11s",
+  "architecture_family": "Ultralytics YOLO11",
+  "weights_file": "best_pothole_model.pt",
+  "task": "detect",
+  "target_class": "pothole",
+  "class_id": 0,
+  "evaluation_metrics": {
+    "precision": 0.879,
+    "recall": 0.845,
+    "f1_score": 0.862,
+    "mAP50": 0.871,
+    "mAP50_95": 0.589,
+    "parameters_millions": 9.42,
+    "gflops": 21.5,
+    "model_size_mb": 19.1,
+    "gpu_latency_ms": 3.9,
+    "cpu_latency_ms": 31.2,
+    "fps_gpu": 256.4,
+    "fps_cpu": 32.1,
+    "training_time_hours": 2.4,
+    "composite_selection_score": 0.796
+  },
+  "superlative_rankings": {
+    "highest_precision": "YOLO11m (0.886)",
+    "highest_recall": "YOLO11m (0.852)",
+    "highest_f1_score": "YOLO11m (0.869) / YOLO11s (0.862)",
+    "highest_mAP50": "YOLO11m (0.878) / YOLO12s (0.873) / YOLO11s (0.871)",
+    "highest_mAP50_95": "YOLO11m (0.601) / YOLO12s (0.592) / YOLO11s (0.589)",
+    "fastest_gpu_model": "YOLOv10n (2.1 ms)",
+    "fastest_cpu_model": "YOLOv10n (18.9 ms)",
+    "smallest_model": "YOLOv10n (4.6 MB) / YOLOv9-t (4.8 MB) / YOLO11n (5.2 MB)",
+    "best_overall_model": "YOLO11s"
+  },
+  "selection_rationale": "YOLO11s achieves the best Pareto-optimal trade-off between mAP@0.50 (87.1%), real-time edge latency (3.9 ms GPU / 31.2 ms CPU, >30 FPS real-time video stream capability), compact size (19.1 MB), and C3k2/C2PSA architectural efficiency. While YOLO11m has a 0.7% higher mAP50, it requires over 2.1x more parameters and doubles latency, making YOLO11s the superior operational choice for vehicle dashcam deployment.",
+  "training_hyperparameters": {
+    "epochs": 100,
+    "patience": 20,
+    "batch_size": 16,
+    "img_size": 640,
+    "optimizer": "AdamW",
+    "lr0": 0.001,
+    "lrf": 0.01,
+    "weight_decay": 0.0005,
+    "warmup_epochs": 3.0,
+    "mosaic": 1.0,
+    "mixup": 0.15,
+    "fl_gamma": 0.0,
+    "box_loss_gain": 7.5,
+    "cls_loss_gain": 0.5,
+    "dfl_loss_gain": 1.5
+  }
+}
